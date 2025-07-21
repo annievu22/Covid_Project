@@ -47,13 +47,13 @@ The dashboard was built using the following tools and technologies:
 
 ## 5. Features / Highlights
 
-### • Business Problem
+### 5.1 Business Problem
 
 COVID-19 presented a global crisis where governments, researchers, and citizens needed up-to-date data to make informed decisions. However, the raw datasets were complex and required significant preprocessing.
 
 This project aims to transform raw global COVID-19 data into a clean, insightful dashboard that compares infection and death rates across time and geography while tracking vaccination progress.
 
-### • Goal of the Dashboard
+### 5.2 Goal of the Dashboard
 
 To build a global-level dashboard that:
 
@@ -62,14 +62,14 @@ To build a global-level dashboard that:
 - Compares continent-level deaths  
 - Displays vaccination rollout globally
 
-### • Walkthrough of Key Visuals
+### 5.3 Walkthrough of Key Visuals
 
 - Global KPIs: Total Cases, Total Deaths, and Global Death Rate  
 - Map of Infection Rates per Country: Percent of infected population visualized geographically  
 - Deaths per Continent (Bar Chart): Comparison of fatality levels across continents  
 - Infection Growth Over Time (Line Chart): Avg. % of population infected by country from March 2020 to March 2021
 
-### • Business Impact & Insights
+### 5.4 Business Impact & Insights
 
 - Europe and North America saw the highest cumulative death counts  
 - Belgium and the UK had among the highest infection rates per capita  
