@@ -94,9 +94,9 @@ Full SQL workflow included in project repository.
 
 ## 7. Tableau Dashboard
 
-[View Full Dashboard on Tableau Public](https://public.tableau.com/views/CovidProject_17516757694200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+🔗[View Full Dashboard on Tableau Public](https://public.tableau.com/views/CovidProject_17516757694200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-### Snapshot
+### Dashboard Snapshot
 
 Below is a snapshot of the Tableau dashboard:
 
@@ -118,7 +118,4 @@ In future iterations, this project could be enhanced by:
 
 Overall, this project reflects a strong foundation in SQL data transformation, global health analytics, and effective data storytelling.
 
----
-
-## 9. Repository Structure
 
