@@ -50,14 +50,7 @@ To build a global-level dashboard that:
 - Compares continent-level deaths  
 - Displays vaccination rollout globally
 
-### 3.3. Walkthrough of Key Visuals
-
-- Global KPIs: Total Cases, Total Deaths, and Global Death Rate  
-- Map of Infection Rates per Country: Percent of infected population visualized geographically  
-- Deaths per Continent (Bar Chart): Comparison of fatality levels across continents  
-- Infection Growth Over Time (Line Chart): Avg. % of population infected by country from March 2020 to March 2021
-
-### 3.4. Business Impact & Insights
+### 3.3. Business Impact & Insights
 
 - Europe and North America saw the highest cumulative death counts  
 - Belgium and the UK had among the highest infection rates per capita  
@@ -121,11 +114,11 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 ---
 
-## 5. Tools, Technologies & Methodology
+## 5. Teck Stack & Methodology
 
 This project integrates both SQL and Tableau to deliver a full-stack data analysis pipeline—from raw data cleaning to business-focused insights.
 
-### 5.1. Technologies Used
+### 5.1. Tech Stack
 
 - **SQL (MySQL Workbench):** Used for data cleaning, formatting, table joins, aggregations, and advanced analytics using CTEs, temp tables, and window functions.
 - **Python (pandas, seaborn, matplotlib):** Utilized in early stages for exploratory data analysis and basic visual validation.
@@ -235,10 +228,10 @@ Below is a snapshot of the Tableau dashboard:
 
 ### Walkthrough of Key Visuals:
 
-- **Country Selector (Dropdown Filter)**  
+- **Country Selector (Dropdown Filter):**  
   Allows users to select and compare COVID-19 trends by country. All visuals on the dashboard update dynamically based on the selected country.
 
-- **Top KPIs (Big Number Cards)**  
+- **Top KPIs (Big Number Cards):**  
   Displays the latest numbers for:
   - Total confirmed cases
   - Total deaths
@@ -246,19 +239,19 @@ Below is a snapshot of the Tableau dashboard:
   - Fully vaccinated (% of population)  
   → These metrics provide quick context on the overall pandemic impact in a selected country.
 
-- **Trend of Daily New Cases & Deaths (Dual Line Chart)**  
+- **Trend of Daily New Cases & Deaths (Dual Line Chart):**  
   Compares daily new confirmed cases vs. deaths. Helps highlight peak waves and the lag between infection and mortality.
 
-- **Rolling Vaccinations Over Time (Line Chart)**  
+- **Rolling Vaccinations Over Time (Line Chart):**  
   Shows the cumulative count of people vaccinated by date using a rolling total. Offers insight into vaccine rollout speed and consistency.
 
-- **Vaccination Coverage by Country (Bar Chart)**  
+- **Vaccination Coverage by Country (Bar Chart):**  
   Visualizes the percentage of each country’s population that has been fully vaccinated. Enables quick comparisons of vaccine access and adoption.
 
-- **Infection Rate vs. Death Rate by Country (Scatter Plot)**  
+- **Infection Rate vs. Death Rate by Country (Scatter Plot):**  
   Plots infection rates against case fatality rates to reveal patterns, outliers, and public health effectiveness.
 
-- **Global Map: Total Deaths by Country**  
+- **Global Map: Total Deaths by Country:**  
   A filled map that colors each country by its total number of COVID-related deaths. Useful for regional comparisons and identifying severely impacted areas.
 
 > Together, these visuals provide a comprehensive view of the pandemic’s evolution—supporting comparative analysis, policy decisions, and public communication.
