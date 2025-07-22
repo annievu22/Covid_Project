@@ -78,21 +78,125 @@ To build a global-level dashboard that:
 - The dashboard can inform international comparisons and help monitor future health crises
 
 ---
+## 6. Data Schema
 
-## 6. SQL Highlights
+This project utilizes two primary datasets:
 
-Key SQL techniques used:
+### a. `coviddeaths` table  
+This table contains daily COVID-related data at the country level.
 
-- Data cleaning using `NULLIF`, `CAST`, and `STR_TO_DATE`  
-- CTEs and `PARTITION BY` window functions for rolling vaccination tracking  
-- Temporary tables and views for modular analysis  
-- Aggregations and conditionals to track infection and mortality rates
+| Column Name              | Description                                   |
+|--------------------------|-----------------------------------------------|
+| location                 | Country or region name                        |
+| continent                | Continent of the country                      |
+| date                     | Date of record (formatted as YYYY-MM-DD)     |
+| population               | Population of the country                     |
+| total_cases              | Cumulative number of confirmed cases          |
+| new_cases                | New cases reported on that day                |
+| total_deaths             | Cumulative number of confirmed deaths         |
+| new_deaths               | New deaths reported on that day               |
+| new_cases_smoothed       | 7-day rolling average of new cases            |
+| icu_patients             | Number of ICU patients                        |
+| hosp_patients            | Number of hospital patients                   |
+| total_deaths_per_million | Deaths per 1 million population               |
 
-Full SQL workflow included in project repository.
+> Additional columns exist for advanced metrics such as case rates, hospitalization, testing, and smoothed indicators.
 
 ---
 
-## 7. Tableau Dashboard
+### b. `covidvaccinations` table  
+This table contains global vaccination, testing, and health policy indicators.
+
+| Column Name                     | Description                                      |
+|----------------------------------|--------------------------------------------------|
+| date                            | Date of record (formatted as YYYY-MM-DD)        |
+| location                        | Country or region name                          |
+| total_vaccinations              | Total vaccine doses administered                |
+| people_vaccinated               | People with at least one dose                   |
+| people_fully_vaccinated         | People who are fully vaccinated                 |
+| new_vaccinations                | Doses administered on a specific day            |
+| new_tests                       | Number of new COVID-19 tests conducted          |
+| positive_rate                   | Share of positive tests                         |
+| tests_per_case                  | Number of tests conducted per confirmed case    |
+| extreme_poverty, smokers, gdp   | Socioeconomic and demographic indicators        |
+
+> Like the deaths table, this dataset includes smoothed and per-million versions of many metrics.
+
+## 7. SQL Data Preparation & Analytical Workflow
+
+This section outlines how SQL was used not only for data cleaning but also for conducting exploratory and comparative analysis before visualization.
+
+### a. Data Cleaning
+
+- Used `STR_TO_DATE()` to standardize all date columns from `MM/DD/YYYY` to `YYYY-MM-DD` format.
+- Applied `NULLIF()` to convert blank strings into `NULL`, enabling proper filtering and aggregation.
+- Used `CAST()` to convert textual numeric fields (like deaths or vaccinations) into integers for accurate calculations.
+
+### b. Exploratory & Descriptive Analysis
+
+- **Case Fatality Rate by Country:**
+
+  ```sql
+  SELECT location, date, total_cases, total_deaths,
+         (total_deaths / total_cases) * 100 AS death_percentage
+  FROM coviddeaths
+  WHERE location LIKE '%states';
+  ```
+
+- **Infection Rate vs. Population:**
+
+  ```sql
+  SELECT location, population, total_cases,
+         (total_cases / population) * 100 AS infection_rate
+  FROM coviddeaths
+  WHERE continent IS NOT NULL;
+  ```
+
+- **Countries with Highest Deaths:**
+
+  ```sql
+  SELECT location, MAX(CAST(total_deaths AS SIGNED)) AS total_death_count
+  FROM coviddeaths
+  WHERE continent IS NOT NULL
+  GROUP BY location
+  ORDER BY total_death_count DESC;
+  ```
+
+- **Global Statistics by Date:**
+
+  ```sql
+  SELECT date,
+         SUM(new_cases) AS total_cases,
+         SUM(CAST(new_deaths AS SIGNED)) AS total_deaths,
+         SUM(CAST(new_deaths AS SIGNED)) / SUM(new_cases) * 100 AS death_percentage
+  FROM coviddeaths
+  WHERE continent IS NOT NULL
+  GROUP BY date;
+  ```
+
+### c. Advanced Aggregation Techniques
+
+- **JOINs** were used to combine deaths and vaccinations by country and date.
+- **Window Functions** (`OVER (PARTITION BY ...)`) calculated running totals of new vaccinations for each country.
+- **CTEs** were used to simplify complex queries and allow modular percentage calculations.
+- **Temporary Tables** were created to store vaccination statistics and avoid recalculations.
+- **Views** were created to persist logic for visualization and simplify Tableau integration.
+
+> These SQL workflows allowed for deep exploration of the data and formed the analytical backbone of the Tableau dashboard.
+
+## 8. Methodology & Tools
+
+- **MySQL**: Used for data cleaning, formatting, aggregation, and transformation using SQL queries, window functions, CTEs, and joins.
+- **Python (pandas, seaborn, matplotlib)**: Utilized in earlier exploratory stages for data wrangling and initial EDA visualizations (not included in final dashboard).
+- **Tableau**: Main tool for building interactive dashboards to explore COVID trends in cases, deaths, and vaccinations across countries and continents.
+- **Descriptive Analytics**: Focused on uncovering historical patterns such as infection rates, death rates, and vaccination progress.
+- **Comparative Analysis**: Compared countries and continents using metrics like deaths per million, cases per population, and vaccination rollout.
+
+> This combination of SQL and visualization allowed a full-stack approach from raw data to insights.
+
+---
+
+## 9. Tableau Dashboard
 
 🔗[View Full Dashboard on Tableau Public](https://public.tableau.com/views/CovidProject_17516757694200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
@@ -104,7 +208,7 @@ Below is a snapshot of the Tableau dashboard:
 
 ---
 
-## 8. Final Conclusion
+## 10. Final Conclusion
 
 This project demonstrates how structured SQL queries and well-designed dashboards can transform raw pandemic data into meaningful, accessible insights. From formatting dates and filling NULLs to performing joins and rolling aggregates, each SQL step helped uncover key global trends.
 
