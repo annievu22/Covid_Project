@@ -27,27 +27,14 @@ The analysis combines two datasets — `coviddeaths` and `covidvaccinations` —
 
 ### 3.1. Business Problem
 
-Since early 2020, COVID-19 has drastically impacted public health, mobility, and global economies. Governments, healthcare agencies, and analysts have struggled to understand how the virus spreads, where fatality rates are highest, and how vaccination progress varies across countries.
-
-The goal of this project is to transform raw COVID-19 data into meaningful, actionable insights to support global health awareness and inform data-driven decisions. Decision-makers need clear and interactive insights to:
-
-- Monitor daily and cumulative cases and deaths.
-- Compare vaccination rollout among countries and continents.
-- Identify regions most affected and those at risk.
-- Allocate medical resources based on hospitalization trends.
+Since 2020, COVID-19 has disrupted global health, mobility, and economies. This project transforms raw data into actionable insights to help track cases, compare vaccination rates, identify high-risk regions, and support data-driven public health decisions.
 
 > **Key questions** addressed in this analysis:
 > - Which countries have the highest infection rates relative to their population?
-> - What is the global trend of new cases and deaths over time?
-> - Which countries and continents have the highest total death tolls?
 > - What is the case fatality rate (death rate among confirmed cases) by country?
-> - What percentage of a country’s population has been infected?
 > - How do vaccination rollouts compare across countries and over time?
 > - What percentage of each country’s population has been fully vaccinated?
-> - What is the trend of daily new vaccinations across continents?
-> - How are rolling vaccination counts progressing by country and date?
 > - What regions are underperforming in vaccination efforts despite high infection rates?
-
 
 ### 3.2. Goal of the Dashboard
 
