@@ -114,7 +114,7 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 ---
 
-## 5. Teck Stack & Methodology
+## 5. Tech Stack & Methodology
 
 This project integrates both SQL and Tableau to deliver a full-stack data analysis pipeline—from raw data cleaning to business-focused insights.
 
