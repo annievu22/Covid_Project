@@ -228,13 +228,47 @@ Below is a snapshot of the Tableau dashboard:
 
 ![COVID-19 Tableau Dashboard](https://raw.githubusercontent.com/annievu22/Covid_Project/main/Covid%20Project%20-%20Tableau%20Snapshot.png)
 
+### Walkthrough of Key Visuals:
+
+- **Country Selector (Dropdown Filter)**  
+  Allows users to select and compare COVID-19 trends by country. All visuals on the dashboard update dynamically based on the selected country.
+
+- **Top KPIs (Big Number Cards)**  
+  Displays the latest numbers for:
+  - Total confirmed cases
+  - Total deaths
+  - Total vaccinations
+  - Fully vaccinated (% of population)  
+  → These metrics provide quick context on the overall pandemic impact in a selected country.
+
+- **Trend of Daily New Cases & Deaths (Dual Line Chart)**  
+  Compares daily new confirmed cases vs. deaths. Helps highlight peak waves and the lag between infection and mortality.
+
+- **Rolling Vaccinations Over Time (Line Chart)**  
+  Shows the cumulative count of people vaccinated by date using a rolling total. Offers insight into vaccine rollout speed and consistency.
+
+- **Vaccination Coverage by Country (Bar Chart)**  
+  Visualizes the percentage of each country’s population that has been fully vaccinated. Enables quick comparisons of vaccine access and adoption.
+
+- **Infection Rate vs. Death Rate by Country (Scatter Plot)**  
+  Plots infection rates against case fatality rates to reveal patterns, outliers, and public health effectiveness.
+
+- **Global Map: Total Deaths by Country**  
+  A filled map that colors each country by its total number of COVID-related deaths. Useful for regional comparisons and identifying severely impacted areas.
+
+> Together, these visuals provide a comprehensive view of the pandemic’s evolution—supporting comparative analysis, policy decisions, and public communication.
 ---
 
 ## 8. Final Conclusion
 
-This project demonstrates how structured SQL queries and well-designed dashboards can transform raw pandemic data into meaningful, accessible insights. From formatting dates and filling NULLs to performing joins and rolling aggregates, each SQL step helped uncover key global trends.
+This project showcases how structured SQL queries and interactive Tableau dashboards can convert raw pandemic data into valuable business and public health insights. By cleaning, joining, and aggregating complex datasets, we identified critical trends in COVID-19 transmission, mortality, and vaccine distribution across countries and continents.
 
-The resulting Tableau dashboard provides a quick yet comprehensive view of global COVID-19 impacts, from infections to deaths to vaccinations. It reveals regional disparities, health system challenges, and the scale of the pandemic.
+From a business and policy perspective, the project offers actionable insights such as:
+- Countries with high infection rates but low vaccination coverage, signaling urgent intervention needs.
+- Shifting trends in new cases and deaths over time, useful for capacity planning in healthcare systems.
+- Variations in vaccine rollout efficiency, helping identify logistical or equity challenges across regions.
+
+The Tableau dashboard enables stakeholders—public health officials and NGOs—to monitor pandemic progression quickly, compare global responses, and guide data-driven decisions.
 
 In future iterations, this project could be enhanced by:
 
