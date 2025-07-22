@@ -80,7 +80,6 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
   [📁 View Dataset 2 (Google Drive)](https://drive.google.com/file/d/1Tk17MTTUC6_rhhjfvrPEROqO7i-x0waX/view?usp=sharing)
 
 - The two tables are linked using both the `location` and `date` fields, enabling country-level trend analysis and vaccination comparisons over time.
----
 
 ### Table 1: `coviddeaths`
 
@@ -100,8 +99,6 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 | total_deaths_per_million | Deaths per 1 million population               |
 
 > Additional columns exist for advanced metrics such as case rates, hospitalization, testing, and smoothed indicators.
-
----
 
 ### Table 2: `covidvaccinations`
 
@@ -125,13 +122,13 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 This project integrates both SQL and Tableau to deliver a full-stack data analysis pipeline—from raw data cleaning to business-focused insights.
 
-### 🧰 Technologies Used
+### Technologies Used
 
 - **SQL (MySQL Workbench):** Used for data cleaning, formatting, table joins, aggregations, and advanced analytics using CTEs, temp tables, and window functions.
 - **Python (pandas, seaborn, matplotlib):** Utilized in early stages for exploratory data analysis and basic visual validation.
 - **Tableau Public:** Primary tool for building interactive dashboards to communicate findings and trends across countries and time periods.
 
-### 🔍 Methodology
+### Methodology
 
 1. **Data Ingestion & Cleaning:**
    - Standardized date format using `STR_TO_DATE()`.
