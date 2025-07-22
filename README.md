@@ -34,13 +34,13 @@ The analysis combines two datasets — `coviddeaths` and `covidvaccinations` —
 
 ## 5. Features / Highlights
 
-### 5.1 Business Problem
+### a. Business Problem
 
 COVID-19 presented a global crisis where governments, researchers, and citizens needed up-to-date data to make informed decisions. However, the raw datasets were complex and required significant preprocessing.
 
 This project aims to transform raw global COVID-19 data into a clean, insightful dashboard that compares infection and death rates across time and geography while tracking vaccination progress.
 
-### 5.2 Goal of the Dashboard
+### b. Goal of the Dashboard
 
 To build a global-level dashboard that:
 
@@ -49,14 +49,14 @@ To build a global-level dashboard that:
 - Compares continent-level deaths  
 - Displays vaccination rollout globally
 
-### 5.3 Walkthrough of Key Visuals
+### c. Walkthrough of Key Visuals
 
 - Global KPIs: Total Cases, Total Deaths, and Global Death Rate  
 - Map of Infection Rates per Country: Percent of infected population visualized geographically  
 - Deaths per Continent (Bar Chart): Comparison of fatality levels across continents  
 - Infection Growth Over Time (Line Chart): Avg. % of population infected by country from March 2020 to March 2021
 
-### 5.4 Business Impact & Insights
+### d. Business Impact & Insights
 
 - Europe and North America saw the highest cumulative death counts  
 - Belgium and the UK had among the highest infection rates per capita  
@@ -81,7 +81,7 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 - The two tables are linked using both the `location` and `date` fields, enabling country-level trend analysis and vaccination comparisons over time.
 
-### Table 1: `coviddeaths`
+### a. Table 1: `coviddeaths`
 
 | Column Name              | Description                                   |
 |--------------------------|-----------------------------------------------|
@@ -100,7 +100,7 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 > Additional columns exist for advanced metrics such as case rates, hospitalization, testing, and smoothed indicators.
 
-### Table 2: `covidvaccinations`
+### b. Table 2: `covidvaccinations`
 
 | Column Name                     | Description                                      |
 |----------------------------------|--------------------------------------------------|
@@ -122,13 +122,13 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 This project integrates both SQL and Tableau to deliver a full-stack data analysis pipeline—from raw data cleaning to business-focused insights.
 
-### Technologies Used
+### a. Technologies Used
 
 - **SQL (MySQL Workbench):** Used for data cleaning, formatting, table joins, aggregations, and advanced analytics using CTEs, temp tables, and window functions.
 - **Python (pandas, seaborn, matplotlib):** Utilized in early stages for exploratory data analysis and basic visual validation.
 - **Tableau Public:** Primary tool for building interactive dashboards to communicate findings and trends across countries and time periods.
 
-### Methodology
+### b. Methodology
 
 1. **Data Ingestion & Cleaning:**
    - Standardized date format using `STR_TO_DATE()`.
@@ -216,16 +216,6 @@ This section outlines how SQL was used not only for data cleaning but also for c
 - **Views** were created to persist logic for visualization and simplify Tableau integration.
 
 > These SQL workflows allowed for deep exploration of the data and formed the analytical backbone of the Tableau dashboard.
-
-## 8. Methodology & Tools
-
-- **MySQL**: Used for data cleaning, formatting, aggregation, and transformation using SQL queries, window functions, CTEs, and joins.
-- **Python (pandas, seaborn, matplotlib)**: Utilized in earlier exploratory stages for data wrangling and initial EDA visualizations (not included in final dashboard).
-- **Tableau**: Main tool for building interactive dashboards to explore COVID trends in cases, deaths, and vaccinations across countries and continents.
-- **Descriptive Analytics**: Focused on uncovering historical patterns such as infection rates, death rates, and vaccination progress.
-- **Comparative Analysis**: Compared countries and continents using metrics like deaths per million, cases per population, and vaccination rollout.
-
-> This combination of SQL and visualization allowed a full-stack approach from raw data to insights.
 
 ---
 
