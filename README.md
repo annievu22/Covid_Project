@@ -17,20 +17,9 @@ The analysis combines two datasets — `coviddeaths` and `covidvaccinations` —
 
 ---
 
-## 2. Dataset Description
+## 2. Business Objectives
 
-- Source: [Our World in Data – COVID-19](https://ourworldindata.org/coronavirus)  
-- Tables:
-  - `coviddeaths`: contains case, death, population, and hospitalization data
-  - `covidvaccinations`: contains vaccination and testing data
-- Time Range: Jan 2020 – April 2021  
-- Coverage: Over 100 countries
-
----
-
-## 3. Business Objectives
-
-### 3.1. Business Problem
+### 2.1. Business Problem
 
 Since 2020, COVID-19 has disrupted global health, mobility, and economies. This project transforms raw data into actionable insights to help track cases, compare vaccination rates, identify high-risk regions, and support data-driven public health decisions.
 
@@ -41,7 +30,7 @@ Since 2020, COVID-19 has disrupted global health, mobility, and economies. This 
 > - What percentage of each country’s population has been fully vaccinated?
 > - What regions are underperforming in vaccination efforts despite high infection rates?
 
-### 3.2. Goal of the Dashboard
+### 2.2. Goal of the Dashboard
 
 To build a global-level dashboard that:
 
@@ -50,7 +39,7 @@ To build a global-level dashboard that:
 - Compares continent-level deaths  
 - Displays vaccination rollout globally
 
-### 3.3. Business Impact & Insights
+### 2.3. Business Impact & Insights
 
 - Europe and North America saw the highest cumulative death counts  
 - Belgium and the UK had among the highest infection rates per capita  
@@ -60,7 +49,7 @@ To build a global-level dashboard that:
 
 ---
 
-## 4. Data Sources & Schema
+## 3. Data Sources & Schema
 
 This project uses two key datasets sourced from [Our World in Data](https://ourworldindata.org/covid-vaccinations) and stored locally for SQL analysis. These datasets were loaded into MySQL Workbench and cleaned for structured querying.
 
@@ -76,7 +65,7 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 - The two tables are linked using both the `location` and `date` fields, enabling country-level trend analysis and vaccination comparisons over time.
 
-### 4.1. Table 1: `coviddeaths`
+### 3.1. Table 1: `coviddeaths`
 
 | Column Name              | Description                                   |
 |--------------------------|-----------------------------------------------|
@@ -95,7 +84,7 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 > Additional columns exist for advanced metrics such as case rates, hospitalization, testing, and smoothed indicators.
 
-### 4.2. Table 2: `covidvaccinations`
+### 3.2. Table 2: `covidvaccinations`
 
 | Column Name                     | Description                                      |
 |----------------------------------|--------------------------------------------------|
@@ -114,17 +103,17 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
 
 ---
 
-## 5. Tech Stack & Methodology
+## 4. Tech Stack & Methodology
 
 This project integrates both SQL and Tableau to deliver a full-stack data analysis pipeline—from raw data cleaning to business-focused insights.
 
-### 5.1. Tech Stack
+### 4.1. Tech Stack
 
 - **SQL (MySQL Workbench):** Used for data cleaning, formatting, table joins, aggregations, and advanced analytics using CTEs, temp tables, and window functions.
 - **Python (pandas, seaborn, matplotlib):** Utilized in early stages for exploratory data analysis and basic visual validation.
 - **Tableau Public:** Primary tool for building interactive dashboards to communicate findings and trends across countries and time periods.
 
-### 5.2. Methodology
+### 4.2. Methodology
 
 a. **Data Ingestion & Cleaning:**
    - Standardized date format using `STR_TO_DATE()`.
@@ -152,17 +141,17 @@ d. **Visualization & Insight Communication:**
 
 ---
 
-## 6. SQL Data Preparation & Analytical Workflow
+## 5. SQL Data Preparation & Analytical Workflow
 
 This section outlines how SQL was used not only for data cleaning but also for conducting exploratory and comparative analysis before visualization.
 
-### 6.1. Data Cleaning
+### 5.1. Data Cleaning
 
 - Used `STR_TO_DATE()` to standardize all date columns from `MM/DD/YYYY` to `YYYY-MM-DD` format.
 - Applied `NULLIF()` to convert blank strings into `NULL`, enabling proper filtering and aggregation.
 - Used `CAST()` to convert textual numeric fields (like deaths or vaccinations) into integers for accurate calculations.
 
-### 6.2. Exploratory & Descriptive Analysis
+### 5.2. Exploratory & Descriptive Analysis
 
 - **Case Fatality Rate by Country:**
 
@@ -204,7 +193,7 @@ This section outlines how SQL was used not only for data cleaning but also for c
   GROUP BY date;
   ```
 
-### 6.3. Advanced Aggregation Techniques
+### 5.3. Advanced Aggregation Techniques
 
 - **JOINs** were used to combine deaths and vaccinations by country and date.
 - **Window Functions** (`OVER (PARTITION BY ...)`) calculated running totals of new vaccinations for each country.
@@ -216,7 +205,7 @@ This section outlines how SQL was used not only for data cleaning but also for c
 
 ---
 
-## 7. Tableau Dashboard
+## 6. Tableau Dashboard
 
 🔗[View Full Dashboard on Tableau Public](https://public.tableau.com/views/CovidProject_17516757694200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
@@ -257,7 +246,7 @@ Below is a snapshot of the Tableau dashboard:
 > Together, these visuals provide a comprehensive view of the pandemic’s evolution—supporting comparative analysis, policy decisions, and public communication.
 ---
 
-## 8. Final Conclusion
+## 7. Final Conclusion
 
 This project showcases how structured SQL queries and interactive Tableau dashboards can convert raw pandemic data into valuable business and public health insights. By cleaning, joining, and aggregating complex datasets, we identified critical trends in COVID-19 transmission, mortality, and vaccine distribution across countries and continents.
 
