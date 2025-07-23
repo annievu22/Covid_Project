@@ -31,17 +31,17 @@ Since 2020, COVID-19 has disrupted global health, mobility, and economies. This 
 
 ### 2.2. Business Impact & Insights
 
-- Europe and North America saw the highest cumulative death counts  
-- Belgium and the UK had among the highest infection rates per capita  
-- Countries like Cambodia and Afghanistan had notably low infection percentages  
-- Vaccination rollout was uneven, highlighting disparities across regions  
-- The dashboard can inform international comparisons and help monitor future health crises
+- Europe and North America saw the highest cumulative death counts. 
+- Belgium and the UK had among the highest infection rates per capita. 
+- Countries like Cambodia and Afghanistan had notably low infection percentages.  
+- Vaccination rollout was uneven, highlighting disparities across regions.  
+- The dashboard can inform international comparisons and help monitor future health crises.
 
 ---
 
 ## 3. Data Sources & Schema
 
-This project uses two key datasets sourced from [Our World in Data](https://ourworldindata.org/covid-vaccinations) and stored locally for SQL analysis. These datasets were loaded into MySQL Workbench and cleaned for structured querying.
+This project uses two key datasets from [Our World in Data](https://ourworldindata.org/covid-vaccinations), which were downloaded and loaded into MySQL for structured querying. The datasets include daily case, death, and vaccination data by country and date.
 
 ### 🔗 Dataset Links
 
@@ -53,54 +53,54 @@ This project uses two key datasets sourced from [Our World in Data](https://ourw
   Contains records of total and new vaccinations, vaccination per hundred, and demographic variables.  
   [📁 View Dataset 2 (Google Drive)](https://drive.google.com/file/d/1Tk17MTTUC6_rhhjfvrPEROqO7i-x0waX/view?usp=sharing)
 
-- The two tables are linked using both the `location` and `date` fields, enabling country-level trend analysis and vaccination comparisons over time.
+> The two tables are linked using both the `location` and `date` fields, enabling country-level trend analysis and vaccination comparisons over time.
 
-### 3.1. Table 1: `coviddeaths`
+### 3.1. Table 1 Schema: `coviddeaths`
 
-| Column Name              | Description                                   |
-|--------------------------|-----------------------------------------------|
-| location                 | Country or region name                        |
-| continent                | Continent of the country                      |
-| date                     | Date of record (formatted as YYYY-MM-DD)     |
-| population               | Population of the country                     |
-| total_cases              | Cumulative number of confirmed cases          |
-| new_cases                | New cases reported on that day                |
-| total_deaths             | Cumulative number of confirmed deaths         |
-| new_deaths               | New deaths reported on that day               |
-| new_cases_smoothed       | 7-day rolling average of new cases            |
-| icu_patients             | Number of ICU patients                        |
-| hosp_patients            | Number of hospital patients                   |
-| total_deaths_per_million | Deaths per 1 million population               |
+```sql
+CREATE TABLE coviddeaths (
+    location                 VARCHAR(100),
+    continent                VARCHAR(50),
+    date                     DATE,
+    population               BIGINT,
+    total_cases              FLOAT,
+    new_cases                FLOAT,
+    total_deaths             FLOAT,
+    new_deaths               FLOAT,
+    new_cases_smoothed       FLOAT,
+    icu_patients             FLOAT,
+    hosp_patients            FLOAT,
+    total_deaths_per_million FLOAT
+    -- Additional columns not listed here for brevity
+);
+````
 
-> Additional columns exist for advanced metrics such as case rates, hospitalization, testing, and smoothed indicators.
+### 3.2. Table 2 Schema: `covidvaccinations`
 
-### 3.2. Table 2: `covidvaccinations`
-
-| Column Name                     | Description                                      |
-|----------------------------------|--------------------------------------------------|
-| date                            | Date of record (formatted as YYYY-MM-DD)        |
-| location                        | Country or region name                          |
-| total_vaccinations              | Total vaccine doses administered                |
-| people_vaccinated               | People with at least one dose                   |
-| people_fully_vaccinated         | People who are fully vaccinated                 |
-| new_vaccinations                | Doses administered on a specific day            |
-| new_tests                       | Number of new COVID-19 tests conducted          |
-| positive_rate                   | Share of positive tests                         |
-| tests_per_case                  | Number of tests conducted per confirmed case    |
-| extreme_poverty, smokers, gdp   | Socioeconomic and demographic indicators        |
-
-> Like the deaths table, this dataset includes smoothed and per-million versions of many metrics.
-
+```sql
+CREATE TABLE covidvaccinations (
+    date                      DATE,
+    location                  VARCHAR(100),
+    total_vaccinations        FLOAT,
+    people_vaccinated         FLOAT,
+    people_fully_vaccinated   FLOAT,
+    new_vaccinations          FLOAT,
+    new_tests                 FLOAT,
+    positive_rate             FLOAT,
+    tests_per_case            FLOAT,
+    extreme_poverty           FLOAT,
+    smokers                   FLOAT,
+    gdp                       FLOAT
+    -- Additional columns not listed here for brevity
+);
+````
 ---
 
 ## 4. Tech Stack & Methodology
 
-This project integrates both SQL and Tableau to deliver a full-stack data analysis pipeline—from raw data cleaning to business-focused insights.
-
 ### 4.1. Tech Stack
 
 - **SQL (MySQL Workbench):** Used for data cleaning, formatting, table joins, aggregations, and advanced analytics using CTEs, temp tables, and window functions.
-- **Python (pandas, seaborn, matplotlib):** Utilized in early stages for exploratory data analysis and basic visual validation.
 - **Tableau Public:** Primary tool for building interactive dashboards to communicate findings and trends across countries and time periods.
 
 ### 4.2. Methodology
