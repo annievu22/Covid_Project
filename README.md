@@ -29,16 +29,7 @@ Since 2020, COVID-19 has disrupted global health, mobility, and economies. This 
 > - What percentage of each country’s population has been fully vaccinated?
 > - What regions are underperforming in vaccination efforts despite high infection rates?
 
-### 2.2. Goal of the Dashboard
-
-To build a global-level dashboard that:
-
-- Highlights countries with the highest infections and death rates  
-- Visualizes infection rate per population over time  
-- Compares continent-level deaths  
-- Displays vaccination rollout globally
-
-### 2.3. Business Impact & Insights
+### 2.2. Business Impact & Insights
 
 - Europe and North America saw the highest cumulative death counts  
 - Belgium and the UK had among the highest infection rates per capita  
@@ -205,6 +196,8 @@ This section outlines how SQL was used not only for data cleaning but also for c
 ---
 
 ## 6. Tableau Dashboard
+
+- This Tableau dashboard provides a comprehensive visualization of global COVID-19 trends in cases, deaths, and vaccinations, supporting public health decisions through interactive and data-driven insights.
 
 🔗[View Full Dashboard on Tableau Public](https://public.tableau.com/views/CovidProject_17516757694200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
