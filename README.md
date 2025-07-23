@@ -10,9 +10,9 @@
 
 ## 1. Overview
 
-This project explores global COVID-19 data using SQL and Tableau to uncover trends in infections, fatalities, and vaccinations. The goal is to identify global and regional patterns that can support policy response, public awareness, and health resource allocation.
+This project examines global COVID-19 data using SQL and Tableau to uncover trends in infection rates, death tolls, and vaccination progress across countries and continents. It provides an interactive tool to support health awareness and policy planning.
 
-The analysis combines two datasets — `coviddeaths` and `covidvaccinations` — and utilizes CTEs, window functions, temp tables, and joins to derive insights, later visualized through an interactive Tableau dashboard.
+SQL was used for structured data transformation including date formatting, joins, rolling metrics, and population-based comparisons. Tableau visuals deliver a clear narrative of pandemic evolution, highlighting regional disparities and vaccination rollouts.
 
 ---
 
