@@ -4,8 +4,7 @@
 ![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 ![Data](https://img.shields.io/badge/Data-COVID‒19-red)
 
-
-> A comprehensive SQL-based analysis of global COVID-19 data, highlighting case and death trends, infection rates, and vaccination rollouts. Data was visualized using Tableau for global insights across countries and continents.
+> A SQL and Tableau analysis of global COVID-19 data, tracking global infection spikes, death rates, and vaccination rollouts across countries and continents.
 
 ---
 
