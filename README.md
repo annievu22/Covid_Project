@@ -1,5 +1,5 @@
 # 🦠 COVID-19 Data Analytics Project
-![SQL](https://img.shields.io/badge/SQL-MySQL-blue)
+![Language](https://img.shields.io/badge/Language-MySQL-blue)
 ![Tableau](https://img.shields.io/badge/Visualization-Tableau-orange)
 ![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 ![Data](https://img.shields.io/badge/Data-COVID‒19-informational)
