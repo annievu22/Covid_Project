@@ -225,6 +225,8 @@ Below is a snapshot of the Tableau dashboard:
 
 ![COVID-19 Tableau Dashboard](https://raw.githubusercontent.com/annievu22/Covid_Project/main/Covid%20Project%20-%20Tableau%20Snapshot.png)
 
+---
+
 ### Walkthrough of Key Visuals:
 
 - **Country Selector (Dropdown Filter):**  
