@@ -10,9 +10,7 @@
 
 ## 1. Overview
 
-This project examines global COVID-19 data using SQL and Tableau to uncover trends in infection rates, death tolls, and vaccination progress across countries and continents. It provides an interactive tool to support health awareness and policy planning.
-
-SQL was used for structured data transformation including date formatting, joins, rolling metrics, and population-based comparisons. Tableau visuals deliver a clear narrative of pandemic evolution, highlighting regional disparities and vaccination rollouts.
+This project uses SQL for data transformation and Tableau for visualization to analyze global COVID-19 trends in cases, deaths, and vaccinations. It offers an interactive view of the pandemic’s progression, highlighting regional disparities and rollout patterns.
 
 ---
 
@@ -211,7 +209,7 @@ GROUP BY location, date;
 
 > Views and cleaned tables streamlined the Tableau workflow and reduced query complexity.
 
-### 4.4. Tableau Dashboard Design
+## 5. Tableau Dashboard Design
 
 - This Tableau dashboard provides a comprehensive visualization of global COVID-19 trends in cases, deaths, and vaccinations, supporting public health decisions through interactive and data-driven insights.
 
@@ -255,7 +253,7 @@ Below is a snapshot of the Tableau dashboard:
 
 ---
 
-## 7. Final Conclusion
+## 6. Final Conclusion
 
 This project demonstrates how global COVID-19 data can be cleaned and analyzed using SQL, then visualized through Tableau to uncover key public health and policy insights. By examining infection rates, death percentages, and vaccine rollout over time and geography, we enable deeper understanding of pandemic patterns.
 
