@@ -211,6 +211,8 @@ GROUP BY location, date;
 
 > Views and cleaned tables streamlined the Tableau workflow and reduced query complexity.
 
+---
+
 ## 5. Tableau Dashboard Design
 
 - This Tableau dashboard provides a comprehensive visualization of global COVID-19 trends in cases, deaths, and vaccinations, supporting public health decisions through interactive and data-driven insights.
